@@ -6,10 +6,10 @@ import Zoom from "react-reveal/Zoom";
 import { connect } from "react-redux";
 import { fetchProducts } from "../actions/productActions";
 
+
 class Products extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       product: null,
     };
@@ -17,14 +17,12 @@ class Products extends Component {
   componentDidMount() {
     this.props.fetchProducts();
   }
-
   openModal = (product) => {
     this.setState({ product });
   };
   closeModal = () => {
     this.setState({ product: null });
   };
-
   render() {
     const { product } = this.state;
     return (
@@ -90,7 +88,7 @@ class Products extends Component {
                         this.closeModal();
                       }}
                     >
-                      Add to Cart
+                      Add To Cart
                     </button>
                   </div>
                 </div>
@@ -102,7 +100,9 @@ class Products extends Component {
     );
   }
 }
-
-export default connect((state) => ({ products: state.products.items }), {
-  fetchProducts,
-})(Products);
+export default connect(
+  (state) => ({ products: state.products.filteredItems }),
+  {
+    fetchProducts,
+  }
+)(Products);
