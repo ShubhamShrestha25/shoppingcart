@@ -223,20 +223,49 @@ input {
   max-height: 96vh;
 }
 
-.product-details img{
+.product-details img {
   max-height: 100vh;
   max-width: 46rem;
   margin: 0 auto;
 }
 
-.product-details-description{
+.product-details-description {
   flex: 1 1;
   margin: 1rem;
 }
 
-.close-modal{
+.close-modal {
   position: absolute;
   right: 1rem;
   top: 2.5rem;
   z-index: 1000;
+}
+
+/* order details */
+
+.order-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.order-details li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-details li div {
+  padding: 10px;
+}
+
+.order-details .items {
+  text-align: right;
+  padding: 0;
+}
+
+.success-message {
+  color: green;
 }
